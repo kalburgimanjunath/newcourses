@@ -1,10 +1,25 @@
-
+import { Link } from "react-router-dom";
 export default function Header() {
-  const menus = ["home", "Pro", "all", "youtube", "signin", "register"];
+  const menus = [
+    { title: "home", link: "/" },
+    { title: "Pro", link: "/pro" },
+    { title: "all", link: "/all" },
+    { title: "youtube", link: "/youtube" },
+    { title: "signin", link: "/signin" },
+    { title: "register", link: "/register" },
+  ];
   return (
-    <div>
+    <div className="flex justify-between bg-pink-300">
       {menus.map((item) => {
-        return <div>{item}</div>;
+        return (
+          <Link
+            key={item}
+            to={item.link}
+            className="p-2 hover:bg-pink-400 cursor-pointer"
+          >
+            {item.title}
+          </Link>
+        );
       })}
     </div>
   );
