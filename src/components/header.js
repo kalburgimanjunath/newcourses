@@ -17,7 +17,7 @@ export default function Header() {
             to={item.link}
             className="p-2 hover:bg-pink-400 cursor-pointer"
           >
-            {item.title}
+            {item.title.toUpperCase()}
           </Link>
         );
       })}

@@ -75,7 +75,11 @@ export default function Home() {
   };
   return (
     <div>
-      <h3>Course Library</h3>
+      <h3 className="font-bold text-3xl">Course Library</h3>
+      <h4 className="text-xl">
+        Get access to every single course by signing up for a Net Ninja Pro
+        membership.
+      </h4>
       <div className="grid md:grid-cols-3 sx:grid-cols-1 p-2 ">
         {data &&
           data.map((item) => {
