@@ -49,7 +49,7 @@ export default function Home() {
 
   const CourseItem = (item) => {
     return (
-      <div className="bg-pink-100 hover:bg-pink-200 p-2 text-center justify-center hover:scale-125">
+      <div className="rounded-lg border-2 m-2 bg-pink-100 hover:bg-pink-200 p-2 text-center justify-center hover:scale-125">
         <Link to={`course/${item.item.slug}`}>
           <div>
             {item.item ? (
