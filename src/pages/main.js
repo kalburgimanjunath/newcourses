@@ -179,10 +179,8 @@ export default function Main() {
       </div>
       <h3>Pro</h3>
       <h4 className="text-xl">
-        Get access to every single course by signing up for a Net Ninja Pro
-        membership.
+        Get access to every single course by signing up for a Pro membership.
       </h4>
-      <h3>Get instant access to all courses with a Net Ninja Pro membership.</h3>
     </div>
   );
 }
