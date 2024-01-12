@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const [data, setData] = useState([]);
   const [Posts, setPosts] = useState([]);
+  const [receipes, setReceipes] = useState([]);
   async function loadData() {
     // const client = contentful.createClient({
     //   accessToken: "UIeKJkavCDJs16HazDKzrYzWw5WEwUGPkuqqWL876DY",
@@ -83,10 +84,51 @@ export default function Home() {
         setPosts(data.postsCollection.items);
       });
   }
+  async function loadReceipeData() {
+    // const client = contentful.createClient({
+    //   accessToken: "UIeKJkavCDJs16HazDKzrYzWw5WEwUGPkuqqWL876DY",
+    //   space: "vty45oyhbzm7",
+    // });
+    const query = `
+    {
+      receipesCollection {
+        items {
+            title,
+            slug,
+            images{
+                fileName,
+                width,
+                height,
+                url
+            }
+        }
+        }
+    }
+    `;
+    fetch(`https://graphql.contentful.com/content/v1/spaces/vty45oyhbzm7`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Authenticate the request
+        Authorization: "Bearer UIeKJkavCDJs16HazDKzrYzWw5WEwUGPkuqqWL876DY",
+      },
+      // send the GraphQL query
+      body: JSON.stringify({ query }),
+    })
+      .then((response) => response.json())
+      .then(({ data, errors }) => {
+        if (errors) {
+          console.error(errors);
+        }
+        setReceipes(data.receipesCollection.items);
+      });
+  }
+
   const [filterText, setText] = useState("");
   useEffect(() => {
     if (filterText == "") loadData();
     loadPostData();
+    loadReceipeData();
   }, [filterText]);
 
   const filterData = (event) => {
@@ -157,6 +199,33 @@ export default function Home() {
       </div>
     );
   };
+  const ReceipeItem = (item) => {
+    console.log(item);
+    return (
+      <div className="relative rounded-lg border-2 bg-pink-100 hover:bg-pink-200 p-2 text-center justify-center hover:scale-110">
+        <Link to={`../receipe/${item.item.slug}`}>
+          <div>
+            {item.item ? (
+              <img
+                src={
+                  item.item.images && item.item.images.url
+                    ? item.item.images.url
+                    : ""
+                }
+                width={"100%"}
+                height={"100%"}
+              />
+            ) : (
+              "loading...."
+            )}
+          </div>
+          <div className="w-full p-2 absolute bottom-0 left-2 bg-white">
+            {item.item.title}
+          </div>
+        </Link>
+      </div>
+    );
+  };
   return (
     <div>
       <h3 className="font-bold text-3xl">Course Library</h3>
@@ -190,6 +259,16 @@ export default function Home() {
           {Posts &&
             Posts.map((item) => {
               return <PostItem key={item.title} item={item}></PostItem>;
+            })}
+        </div>
+      </div>
+      <h3 className="font-bold text-3xl">Receipe Library</h3>
+      <hr />
+      <div>
+        <div className="grid md:grid-cols-3 sx:grid-cols-1 p-2 ">
+          {receipes &&
+            receipes.map((item) => {
+              return <ReceipeItem key={item.title} item={item}></ReceipeItem>;
             })}
         </div>
       </div>
