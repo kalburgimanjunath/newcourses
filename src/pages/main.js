@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 // import { courseService } from "../services/courseService";
 const Hero = () => {
   return (
-    <div className="grid grid-cols-2 m-5 p-5">
+    <div className="grid  items-center  grid-cols-2 m-5 mt-20 p-5 shadow-lg bg-gray-300 rounded-lg justify-between">
       <div>
-        <h3 className="text-3xl font-bold">Your Coding Skills</h3>
+        <h3 className="text-3xl font-bold">Improve My Coding Skills</h3>
         <button className="bg-blue-300 rounded-md p-2 pl-4 pr-4 mt-10">
           Learn About
         </button>
       </div>
       <div>
-        <h3 className="heading1">Popular Courses</h3>
+        <img src="https://images.unsplash.com/photo-1704901857791-c8a651514d52?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
       </div>
     </div>
   );

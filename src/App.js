@@ -11,14 +11,16 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <Routes>
-        <Route path="/landing/:id" element={<Landing />} />
-        <Route path="/receipe/:id" element={<Receipe />} />
-        <Route path="/posts/:id" element={<Posts />} />
-        <Route path="/course/:id" element={<Courses />} />
-        <Route path="/all" exact element={<Home />} />
-        <Route path="/" exact element={<Main />} />
-      </Routes>
+      <div className="mt-20 text-center items-center">
+        <Routes>
+          <Route path="/landing/:id" element={<Landing />} />
+          <Route path="/receipe/:id" element={<Receipe />} />
+          <Route path="/posts/:id" element={<Posts />} />
+          <Route path="/course/:id" element={<Courses />} />
+          <Route path="/all" exact element={<Home />} />
+          <Route path="/" exact element={<Main />} />
+        </Routes>
+      </div>
     </div>
   );
 }
