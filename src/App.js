@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <div className="mt-20 text-center items-center">
+      <div className="mt-20">
         <Routes>
           <Route path="/landing/:id" element={<Landing />} />
           <Route path="/receipe/:id" element={<Receipe />} />

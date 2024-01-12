@@ -62,7 +62,7 @@ export default function Courses() {
             <div className="p-2 relative bottom-0 left-2 bg-white">
               {data[0].title}
             </div>
-            <div className="p-2 relative bottom-0 left-2 bg-white">
+            <div className="relative bottom-0 left-2 bg-white text-left m-20 bg-gray-300 p-20">
               <Markdown>{data[0].description}</Markdown>
             </div>
           </>
