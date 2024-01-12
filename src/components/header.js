@@ -9,13 +9,13 @@ export default function Header() {
     { title: "register", link: "/register" },
   ];
   return (
-    <div className="flex justify-between bg-pink-300">
+    <div className="flex justify-between bg-black text-white">
       {menus.map((item) => {
         return (
           <Link
             key={item}
             to={item.link}
-            className="p-2 hover:bg-pink-400 cursor-pointer"
+            className="p-6 hover:bg-pink-400 cursor-pointer"
           >
             {item.title.toUpperCase()}
           </Link>
