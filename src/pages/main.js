@@ -181,6 +181,7 @@ export default function Main() {
       <h4 className="text-xl">
         Get access to every single course by signing up for a Pro membership.
       </h4>
+      <h3>Testimonials</h3>
     </div>
   );
 }
