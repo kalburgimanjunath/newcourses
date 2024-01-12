@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Courses from "./pages/courses";
 import Header from "./components/header";
 import Posts from "./pages/posts";
+import Main from "./pages/main";
 export default function App() {
   return (
     <div className="App">
@@ -11,7 +12,8 @@ export default function App() {
       <Routes>
         <Route path="/posts/:id" element={<Posts />} />
         <Route path="/course/:id" element={<Courses />} />
-        <Route path="/" exact element={<Home />} />
+        <Route path="/all" exact element={<Home />} />
+        <Route path="/" exact element={<Main />} />
       </Routes>
     </div>
   );
