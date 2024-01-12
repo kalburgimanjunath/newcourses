@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-export default function Courses() {
+export default function Posts() {
   const { id } = useParams();
   const [data, setData] = useState([]);
   async function loadData() {
@@ -11,11 +11,11 @@ export default function Courses() {
     // });
     const query = `
 {
-  courseCollection(where: {slug:"${id}"}){
+  postsCollection(where: {slug:"${id}"}){
     items { 
         title,
+        descriptionnew,
         slug,
-        description,
         image{
             fileName,
             width,
@@ -41,7 +41,7 @@ export default function Courses() {
         if (errors) {
           console.error(errors);
         }
-        setData(data.courseCollection.items);
+        setData(data.postsCollection.items);
       });
   }
 
@@ -63,16 +63,16 @@ export default function Courses() {
               {data[0].title}
             </div>
             <div className="p-2 relative bottom-0 left-2 bg-white">
-              {data[0].description}
+              {data[0].descriptionnew}
             </div>
           </>
         ) : (
           "loading...."
         )}
       </div>
-      <div className="p-2 relative bottom-0 left-2 bg-white">
+      {/* <div className="p-2 relative bottom-0 left-2 bg-white">
         {data[0].title}
-      </div>
+      </div> */}
     </div>
   );
 }
