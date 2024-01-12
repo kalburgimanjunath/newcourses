@@ -150,7 +150,7 @@ export default function Home() {
   const CourseItem = (item) => {
     return (
       <div className="relative rounded-lg border-2 bg-pink-100 hover:bg-pink-200 p-2 text-center justify-center hover:scale-110">
-        <Link to={`course/${item.item.slug}`}>
+        <Link to={`../course/${item.item.slug}`}>
           <div>
             {item.item ? (
               <img
@@ -176,7 +176,7 @@ export default function Home() {
   const PostItem = (item) => {
     return (
       <div className="relative rounded-lg border-2 bg-pink-100 hover:bg-pink-200 p-2 text-center justify-center hover:scale-110">
-        <Link to={`posts/${item.item.slug}`}>
+        <Link to={`../posts/${item.item.slug}`}>
           <div>
             {item.item ? (
               <img

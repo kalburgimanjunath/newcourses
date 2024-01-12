@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export default function Header() {
   const menus = [
     { title: "home", link: "/" },
-    { title: "Pro", link: "/pro" },
+    { title: "Pro", link: "/landing/pro-page" },
     { title: "all", link: "/all" },
     { title: "youtube", link: "/youtube" },
     { title: "signin", link: "/signin" },
