@@ -12,7 +12,7 @@ const Hero = () => {
         </button>
       </div>
       <div>
-        <h3>Popular Courses</h3>
+        <h3 className="heading1">Popular Courses</h3>
       </div>
     </div>
   );
