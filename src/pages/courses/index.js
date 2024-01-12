@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import Markdown from "react-markdown";
 export default function Courses() {
   const { id } = useParams();
   const [data, setData] = useState([]);
@@ -63,15 +63,12 @@ export default function Courses() {
               {data[0].title}
             </div>
             <div className="p-2 relative bottom-0 left-2 bg-white">
-              {data[0].description}
+              <Markdown>{data[0].description}</Markdown>
             </div>
           </>
         ) : (
           "loading...."
         )}
-      </div>
-      <div className="p-2 relative bottom-0 left-2 bg-white">
-        {data[0].title}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import Markdown from "react-markdown";
 export default function Posts() {
   const { id } = useParams();
   const [data, setData] = useState([]);
@@ -63,7 +63,7 @@ export default function Posts() {
               {data[0].title}
             </div>
             <div className="p-2 relative bottom-0 left-2 bg-white">
-              {data[0].descriptionnew}
+              <Markdown>{data[0].descriptionnew}</Markdown>
             </div>
           </>
         ) : (
