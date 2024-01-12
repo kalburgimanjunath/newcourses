@@ -166,6 +166,15 @@ export default function Main() {
             return <CourseItem key={item.title} item={item}></CourseItem>;
           })}
       </div>
+      <h3 className="font-bold text-3xl">Newest Courses</h3>
+      <hr className="m-2" />
+
+      <div className="grid md:grid-cols-3 sx:grid-cols-1 p-2 ">
+        {data &&
+          data.map((item) => {
+            return <CourseItem key={item.title} item={item}></CourseItem>;
+          })}
+      </div>
 
       <h3 className="font-bold text-3xl">Posts Library</h3>
       <hr />
