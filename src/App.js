@@ -7,6 +7,7 @@ import Posts from "./pages/posts";
 import Receipe from "./pages/receipe";
 import Landing from "./pages/landing";
 import Main from "./pages/main";
+import Questions from "./pages/questions";
 export default function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/receipe/:id" element={<Receipe />} />
           <Route path="/posts/:id" element={<Posts />} />
           <Route path="/course/:id" element={<Courses />} />
+          <Route path="/question/:id" element={<Questions />} />
           <Route path="/all" exact element={<Home />} />
           <Route path="/" exact element={<Main />} />
         </Routes>

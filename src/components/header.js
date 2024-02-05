@@ -4,6 +4,7 @@ export default function Header() {
     { title: "home", link: "/" },
     { title: "Pro", link: "/landing/pro-page" },
     { title: "all", link: "/all" },
+    { title: "questions", link: "/question" },
     { title: "youtube", link: "/landing/youtube" },
     { title: "signin", link: "/signin" },
     { title: "register", link: "/register" },
